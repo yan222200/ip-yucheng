@@ -104,6 +104,15 @@ public class ChatBot {
                 System.out.println("Added: " + tasks.get(tasks.size() - 1));
                 continue;
             }
+            if (input.startsWith("delete ")) {
+                int index = Integer.parseInt(input.substring(7).trim()) - 1;
+                Task removed = tasks.remove(index);
+                System.out.println("Noted. I've removed this task:");
+                System.out.println("  " + removed);
+                System.out.println("Now you have " + tasks.size() + " tasks in the list.");
+                continue;
+            }
+
 
             // fallback：暂时当 todo（可选）
             tasks.add(new Todo(input));
