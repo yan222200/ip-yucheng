@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.util.ArrayList;
 public class ChatBot {
     public static void main(String[] args) {
         String logo = " ____        _        \n"
@@ -12,8 +12,27 @@ public class ChatBot {
         System.out.println("What can I do for you?");
 
         Scanner scanner = new Scanner(System.in);
+        ArrayList<String> tasks = new ArrayList<>();
+        
         while (true) {
-            String input = scanner.nextLine();
+            String input = scanner.nextLine().trim();
+            if (input.equalsIgnoreCase("bye")) {
+                System.out.println("Bye. Hope to see you again soon!");
+                break;
+            }
+            if (input.equalsIgnoreCase("list")) {
+                if (tasks.isEmpty()) {
+                    System.out.println("No tasks yet.");
+                } else {
+                    for (int i = 0; i < tasks.size(); i++) {
+                        System.out.println((i + 1) + ". " + tasks.get(i));
+                    }
+                }
+                continue;
+            }
+            tasks.add(input);
+            System.out.println("Added: " + input);
+            
             if (input.trim().equalsIgnoreCase("bye")) {
                 System.out.println("Bye. Hope to see you again soon!");
                 break;
