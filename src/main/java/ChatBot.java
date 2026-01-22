@@ -50,8 +50,39 @@ public class ChatBot {
                 }
                 continue;
             }
-            tasks.add(new Task(input));
-            System.out.println("Added: " + input);
+            if (input.startsWith("todo ")) {
+                String desc = input.substring(5).trim();
+                tasks.add(new Todo(desc));
+                System.out.println("Added: " + tasks.get(tasks.size() - 1));
+                continue;
+            }
+
+            if (input.startsWith("deadline ")) {
+                String rest = input.substring(9).trim();
+                String[] parts = rest.split(" /by ", 2);
+                String desc = parts[0].trim();
+                String by = parts[1].trim();
+                tasks.add(new Deadline(desc, by));
+                System.out.println("Added: " + tasks.get(tasks.size() - 1));
+                continue;
+            }
+
+            if (input.startsWith("event ")) {
+                String rest = input.substring(6).trim();
+                String[] p1 = rest.split(" /from ", 2);
+                String desc = p1[0].trim();
+                String[] p2 = p1[1].split(" /to ", 2);
+                String from = p2[0].trim();
+                String to = p2[1].trim();
+                tasks.add(new Event(desc, from, to));
+                System.out.println("Added: " + tasks.get(tasks.size() - 1));
+                continue;
+            }
+
+            // fallback：暂时当 todo（可选）
+            tasks.add(new Todo(input));
+            System.out.println("Added: " + tasks.get(tasks.size() - 1));
+
 
             if (input.trim().equalsIgnoreCase("bye")) {
                 System.out.println("Bye. Hope to see you again soon!");
