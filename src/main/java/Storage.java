@@ -19,6 +19,11 @@ public class Storage {
 
     private final String filePath;
 
+    /**
+     * Constructs a Storage instance with the given file path.
+     *
+     * @param filePath the path to the storage file
+     */
     public Storage(String filePath) {
         this.filePath = filePath;
     }
@@ -78,6 +83,12 @@ public class Storage {
         }
     }
 
+    /**
+     * Parses a single line from the storage file into a Task object.
+     *
+     * @param line the line to parse
+     * @return the parsed Task, or null if parsing fails
+     */
     private Task parseTask(String line) {
         // Expected formats:
         // T | 1 | description
@@ -141,6 +152,12 @@ public class Storage {
         return task;
     }
 
+    /**
+     * Formats a Task object into a string for storage.
+     *
+     * @param task the task to format
+     * @return the formatted string representation of the task
+     */
     private String formatTask(Task task) {
         String doneFlag = task.isDone() ? "1" : "0";
 

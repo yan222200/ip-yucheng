@@ -8,10 +8,22 @@ import java.util.ArrayList;
 public class UnmarkCommand extends Command {
     private final int index;
 
+    /**
+     * Constructs an UnmarkCommand with the given task index.
+     *
+     * @param index the index of the task to unmark (0-based)
+     */
     public UnmarkCommand(int index) {
         this.index = index;
     }
 
+    /**
+     * Executes the command to mark the specified task as not done.
+     *
+     * @param tasks the list of tasks
+     * @param storage the storage handler
+     * @return a message confirming the task was unmarked, or an error message if index is invalid
+     */
     @Override
     public String execute(ArrayList<Task> tasks, Storage storage) {
         if (index < 0 || index >= tasks.size()) {
