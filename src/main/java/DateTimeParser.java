@@ -36,12 +36,12 @@ public class DateTimeParser {
     );
 
     // Output formatter for dates
-    private static final DateTimeFormatter OUTPUT_DATE_FORMATTER = 
-        DateTimeFormatter.ofPattern("MMM d yyyy");
+    private static final DateTimeFormatter OUTPUT_DATE_FORMATTER =
+            DateTimeFormatter.ofPattern("MMM d yyyy");
 
     // Output formatter for date-times
-    private static final DateTimeFormatter OUTPUT_DATETIME_FORMATTER = 
-        DateTimeFormatter.ofPattern("MMM d yyyy HHmm");
+    private static final DateTimeFormatter OUTPUT_DATETIME_FORMATTER =
+            DateTimeFormatter.ofPattern("MMM d yyyy HHmm");
 
     /**
      * Parses a date string into a LocalDate.
@@ -191,8 +191,8 @@ public class DateTimeParser {
             return null;
         }
         try {
-            return LocalDateTime.parse(dateTimeString.trim(), 
-                DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HHmm"));
+            return LocalDateTime.parse(dateTimeString.trim(),
+                    DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HHmm"));
         } catch (DateTimeParseException e) {
             return null;
         }

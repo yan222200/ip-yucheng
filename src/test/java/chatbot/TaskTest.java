@@ -1,10 +1,10 @@
 package chatbot;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.Test;
 
 public class TaskTest {
 
@@ -36,7 +36,7 @@ public class TaskTest {
     public void testToString() {
         Task task = new Task("Test task");
         assertEquals("[ ] Test task", task.toString());
-        
+
         task.markDone();
         assertEquals("[X] Test task", task.toString());
     }

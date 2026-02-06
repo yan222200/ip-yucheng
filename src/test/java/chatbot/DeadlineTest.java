@@ -1,11 +1,11 @@
 package chatbot;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import java.time.LocalDate;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import org.junit.jupiter.api.Test;
 
 public class DeadlineTest {
 
@@ -24,7 +24,7 @@ public class DeadlineTest {
         Deadline deadline = new Deadline("Return book", date);
         String expected = "[D] [ ] Return book (by: Feb 1 2025)";
         assertEquals(expected, deadline.toString());
-        
+
         deadline.markDone();
         String expectedDone = "[D] [X] Return book (by: Feb 1 2025)";
         assertEquals(expectedDone, deadline.toString());

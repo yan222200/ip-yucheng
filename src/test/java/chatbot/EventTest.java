@@ -1,11 +1,11 @@
 package chatbot;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 import java.time.LocalDateTime;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import org.junit.jupiter.api.Test;
 
 public class EventTest {
 
@@ -27,7 +27,7 @@ public class EventTest {
         Event event = new Event("Project meeting", from, to);
         String expected = "[E] [ ] Project meeting (from: Feb 1 2025 1400 to: Feb 1 2025 1600)";
         assertEquals(expected, event.toString());
-        
+
         event.markDone();
         String expectedDone = "[E] [X] Project meeting (from: Feb 1 2025 1400 to: Feb 1 2025 1600)";
         assertEquals(expectedDone, event.toString());

@@ -31,6 +31,7 @@ public class DeleteCommand extends Command {
         }
         Task removed = tasks.remove(index);
         storage.save(tasks);
-        return "Noted. I've removed this task:\n  " + removed + "\nNow you have " + tasks.size() + " tasks in the list.";
+        return "Noted. I've removed this task:\n  " + removed
+                + "\nNow you have " + tasks.size() + " tasks in the list.";
     }
 }

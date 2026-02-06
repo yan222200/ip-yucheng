@@ -62,7 +62,8 @@ public class Parser {
             String byString = parts[1].trim();
             LocalDate by = DateTimeParser.parseDate(byString);
             if (by == null) {
-                return new InvalidCommand("Oops! Invalid date format. Please use formats like: 2025-02-01, Feb 1 2025, or 01/02/2025");
+                return new InvalidCommand("Oops! Invalid date format. "
+                        + "Please use formats like: 2025-02-01, Feb 1 2025, or 01/02/2025");
             }
             return new DeadlineCommand(desc, by);
         }
@@ -71,19 +72,22 @@ public class Parser {
             String rest = trimmed.substring(COMMAND_EVENT_LENGTH).trim();
             String[] p1 = rest.split(" /from ", 2);
             if (p1.length < 2) {
-                return new InvalidCommand("Oops! Please use the format: event <description> /from <date-time> /to <date-time>");
+                return new InvalidCommand("Oops! Please use the format: "
+                        + "event <description> /from <date-time> /to <date-time>");
             }
             String desc = p1[0].trim();
             String[] p2 = p1[1].split(" /to ", 2);
             if (p2.length < 2) {
-                return new InvalidCommand("Oops! Please use the format: event <description> /from <date-time> /to <date-time>");
+                return new InvalidCommand("Oops! Please use the format: "
+                        + "event <description> /from <date-time> /to <date-time>");
             }
             String fromString = p2[0].trim();
             String toString = p2[1].trim();
             LocalDateTime from = DateTimeParser.parseDateTime(fromString);
             LocalDateTime to = DateTimeParser.parseDateTime(toString);
             if (from == null || to == null) {
-                return new InvalidCommand("Oops! Invalid date-time format. Please use formats like: 2025-02-01 1400, Feb 1 2025 2pm, or 01/02/2025 14:00");
+                return new InvalidCommand("Oops! Invalid date-time format. "
+                        + "Please use formats like: 2025-02-01 1400, Feb 1 2025 2pm, or 01/02/2025 14:00");
             }
             return new EventCommand(desc, from, to);
         }
