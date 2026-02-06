@@ -23,6 +23,17 @@ public class ChatBot {
     }
 
     /**
+     * Generates a response for the given user input without doing any console I/O.
+     *
+     * @param input the user input string
+     * @return the response string from the chatbot
+     */
+    public String getResponse(String input) {
+        Command command = Parser.parse(input);
+        return command.execute(tasks, storage);
+    }
+
+    /**
      * Runs the ChatBot application.
      */
     public void run() {
