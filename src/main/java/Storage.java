@@ -1,9 +1,9 @@
 package chatbot;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -98,12 +98,6 @@ public class Storage {
         }
     }
 
-    /**
-     * Parses a single line from the storage file into a Task object.
-     *
-     * @param line the line to parse
-     * @return the parsed Task, or null if parsing fails
-     */
     /**
      * Parses a single line from the storage file into a Task object.
      *

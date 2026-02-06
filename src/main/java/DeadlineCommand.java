@@ -1,7 +1,7 @@
 package chatbot;
 
-import java.util.ArrayList;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  * Represents a command to add a deadline task.

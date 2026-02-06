@@ -1,9 +1,9 @@
 package chatbot;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+
+import org.junit.jupiter.api.Test;
 
 public class TodoTest {
 
@@ -18,7 +18,7 @@ public class TodoTest {
     public void testTodoToString() {
         Todo todo = new Todo("Read book");
         assertEquals("[T] [ ] Read book", todo.toString());
-        
+
         todo.markDone();
         assertEquals("[T] [X] Read book", todo.toString());
     }
