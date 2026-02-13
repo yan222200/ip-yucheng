@@ -7,3 +7,5 @@ Display | Name | Github Profile | Homepage
 # I would like to join this list. How can I help the project
 
 For more information, please refer to our [contributor's guide](https://oss-generic.github.io/process/).
+![](https://avatars.githubusercontent.com/u/12345678?s=100) | Your Name | [Github](https://github.com/your-github) | [Homepage](https://example.com)
+![](https://avatars.githubusercontent.com/u/87654321?s=100) | Another Dev | [Github](https://github.com/another-dev) | [Homepage](https://example.org)
